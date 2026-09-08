@@ -52,7 +52,7 @@ Irfan_Portfolio/
 │   ├── projectTransformer.js         # Normalizer merging flagship & live repo data
 │   ├── projectSync.js                # UI coordinator & category filtering
 │   ├── data.js                       # Flagship resume-backed project datasets
-│   ├── contact.js                    # Validated contact form & toast notifications
+│   ├── contact.js                    # Verified contact panel & toast notifications
 │   ├── main.js                       # Title text rotator, scrollspy & nav drawer
 │   └── case-study.js                 # Reading progress bar & scroll reveals
 ├── projects/

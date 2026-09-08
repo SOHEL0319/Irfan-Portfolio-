@@ -150,7 +150,26 @@ jsonFiles.forEach(file => {
   }
 });
 
-// --- 5. Summary & Exit Code ---
+// --- 5. Verified Contact Panel & Direct Action Audit ---
+console.log('\n📬 5. Verified Contact Panel & Direct Action Channels:');
+const indexHtmlContent = fs.readFileSync(path.join(ROOT_DIR, 'index.html'), 'utf8');
+const contactJsContent = fs.readFileSync(path.join(ROOT_DIR, 'js', 'contact.js'), 'utf8');
+
+// Ensure NO form elements exist in Contact section
+assert(!indexHtmlContent.includes('id="contactForm"'), 'No contactForm exists in index.html');
+assert(!indexHtmlContent.includes('name="access_key"'), 'No Web3Forms access_key input in index.html');
+assert(!indexHtmlContent.includes('name="botcheck"'), 'No botcheck honeypot in index.html');
+assert(!indexHtmlContent.includes('id="formStatusBox"'), 'No formStatusBox in index.html');
+assert(!contactJsContent.includes('https://api.web3forms.com/submit'), 'No Web3Forms API endpoint in js/contact.js');
+
+// Ensure Verified Contact Information & Direct Action Links exist
+assert(indexHtmlContent.includes('href="mailto:smdirfan182@gmail.com"'), 'Direct mailto link exists in index.html');
+assert(indexHtmlContent.includes('href="tel:+916303600159"'), 'Direct tel link exists in index.html');
+assert(indexHtmlContent.includes('href="https://www.linkedin.com/in/mahammad-irfan-shaik-579828286/"'), 'Verified LinkedIn link exists in index.html');
+assert(indexHtmlContent.includes('href="https://github.com/IRFAN18727"'), 'Verified GitHub link exists in index.html');
+assert(indexHtmlContent.includes('Email Me'), 'Direct Email Me action button exists in index.html');
+
+// --- 6. Summary & Exit Code ---
 console.log('\n============================================================');
 console.log(`AUDIT RESULTS: ${passedTests} PASSED, ${failedTests} FAILED`);
 console.log('============================================================\n');

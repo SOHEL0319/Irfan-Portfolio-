@@ -953,25 +953,87 @@
 
         <div class="section-header reveal">
           <span class="section-eyebrow">Get In Touch</span>
-          <h2 class="section-title">Let's Build Something Meaningful</h2>
+          <h2 class="section-title">Let's Connect</h2>
           <p class="section-subtitle">
-            If you're looking for someone interested in Machine Learning, Data Science, Computer Vision, or AI-driven applications, I'd be glad to connect.
+            Interested in working together or discussing an ML/Data Science opportunity?
           </p>
         </div>
 
         <div class="contact-grid">
           
-          <!-- Left: Direct Channels -->
-          <div class="contact-info-card reveal delay-100">
-            <h3 style="font-size: var(--text-xl); color: var(--text-primary);">Contact Information</h3>
-            <p style="font-size: var(--text-sm); margin-bottom: 0.5rem;">
-              Reach out directly via email, phone, or professional networks. I typically respond within 24 hours.
-            </p>
+          <!-- Left Column: Primary Pitch & Quick Action Buttons -->
+          <div class="contact-panel-card reveal delay-100">
+            <div class="contact-panel-header">
+              <div class="contact-status-badge">
+                <span class="status-dot"></span>
+                <span>Open for Opportunities & Collaboration</span>
+              </div>
+              <h3 class="contact-panel-title">Let's Build Something Meaningful</h3>
+              <p class="contact-panel-text">
+                I am actively seeking roles in Machine Learning, Computer Vision, NLP, and Data Science. Whether you have a project inquiry, full-time opening, or want to discuss technical ideas, reach out directly through my verified contact methods.
+              </p>
+            </div>
+
+            <!-- Direct Action Buttons -->
+            <div class="contact-cta-group">
+              <a href="mailto:smdirfan182@gmail.com" class="btn btn-lg btn-primary" id="btnContactEmail">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Email Me</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/mahammad-irfan-shaik-579828286/" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-secondary" id="btnContactLinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+
+              <a href="https://github.com/IRFAN18727" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-outline" id="btnContactGitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                <span>GitHub</span>
+              </a>
+            </div>
+
+            <!-- Meta info badges -->
+            <div class="contact-meta-list">
+              <div class="contact-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Response Time: Typically within 24 hours</span>
+              </div>
+              <div class="contact-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Location: India · Available for Remote & Relocation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Direct Verified Channels -->
+          <div class="contact-panel-card reveal delay-200">
+            <div class="contact-panel-header">
+              <h3 class="contact-panel-title" style="font-size: var(--text-xl);">Verified Contact Methods</h3>
+              <p class="contact-panel-text">
+                Direct communication channels. Click any item below to compose an email, place a call, or inspect profiles:
+              </p>
+            </div>
 
             <div class="contact-channels">
-              <a href="mailto:smdirfan182@gmail.com" class="contact-channel-item">
+              <!-- Email Channel -->
+              <a href="mailto:smdirfan182@gmail.com" class="contact-channel-item" id="channelDirectEmail" title="Send direct email to smdirfan182@gmail.com">
                 <div class="channel-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                   </svg>
@@ -980,11 +1042,19 @@
                   <span class="channel-label">Email</span>
                   <span class="channel-val">smdirfan182@gmail.com</span>
                 </div>
+                <div class="channel-action-hint">
+                  <span>Send Mail</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
               </a>
 
-              <a href="tel:+916303600159" class="contact-channel-item">
+              <!-- Phone Channel -->
+              <a href="tel:+916303600159" class="contact-channel-item" id="channelDirectPhone" title="Call +91 6303600159">
                 <div class="channel-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
                 </div>
@@ -992,11 +1062,19 @@
                   <span class="channel-label">Phone</span>
                   <span class="channel-val">+91 6303600159</span>
                 </div>
+                <div class="channel-action-hint">
+                  <span>Call / Tap</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
               </a>
 
-              <a href="https://www.linkedin.com/in/mahammad-irfan-shaik-579828286/" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+              <!-- LinkedIn Channel -->
+              <a href="https://www.linkedin.com/in/mahammad-irfan-shaik-579828286/" target="_blank" rel="noopener noreferrer" class="contact-channel-item" id="channelDirectLinkedIn" title="Visit LinkedIn Profile">
                 <div class="channel-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                     <rect x="2" y="9" width="4" height="12"></rect>
                     <circle cx="4" cy="4" r="2"></circle>
@@ -1006,11 +1084,20 @@
                   <span class="channel-label">LinkedIn</span>
                   <span class="channel-val">mahammad-irfan-shaik</span>
                 </div>
+                <div class="channel-action-hint">
+                  <span>Connect</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </div>
               </a>
 
-              <a href="https://github.com/IRFAN18727" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+              <!-- GitHub Channel -->
+              <a href="https://github.com/IRFAN18727" target="_blank" rel="noopener noreferrer" class="contact-channel-item" id="channelDirectGitHub" title="Visit GitHub Profile">
                 <div class="channel-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                   </svg>
                 </div>
@@ -1018,51 +1105,22 @@
                   <span class="channel-label">GitHub</span>
                   <span class="channel-val">github.com/IRFAN18727</span>
                 </div>
+                <div class="channel-action-hint">
+                  <span>View Code</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </div>
               </a>
             </div>
           </div>
 
-          <!-- Right: Interactive Validated Form -->
-          <div class="reveal delay-200">
-            <form class="contact-form" id="contactForm" novalidate>
-              
-              <div class="form-status-box" id="formStatusBox"></div>
-
-              <div class="form-group">
-                <label for="contactName" class="form-label">Your Name</label>
-                <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Alex Smith" required>
-                <span class="form-error-msg" id="contactNameError"></span>
-              </div>
-
-              <div class="form-group">
-                <label for="contactEmail" class="form-label">Your Email</label>
-                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="e.g. alex@example.com" required>
-                <span class="form-error-msg" id="contactEmailError"></span>
-              </div>
-
-              <div class="form-group">
-                <label for="contactSubject" class="form-label">Subject</label>
-                <input type="text" id="contactSubject" name="subject" class="form-input" placeholder="e.g. ML Engineer Role / Project Inquiry" required>
-                <span class="form-error-msg" id="contactSubjectError"></span>
-              </div>
-
-              <div class="form-group">
-                <label for="contactMessage" class="form-label">Message</label>
-                <textarea id="contactMessage" name="message" class="form-textarea" placeholder="Write your message here..." required></textarea>
-                <span class="form-error-msg" id="contactMessageError"></span>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="22" y1="2" x2="11" y2="13"></line>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
-                <span>Send Message</span>
-              </button>
-            </form>
-          </div>
-
         </div>
+
+      </div>
+    </section>
 
       </div>
     </section>
