@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Security Camera System — Case Study | Mahammad Irfan Shaik</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Engineering case study of the Smart Security Camera System built by Mahammad Irfan Shaik. Real-time YOLOv8 person detection, ByteTrack tracking, FaceNet recognition, Telegram alerts, and Streamlit dashboard.">
+  <meta name="theme-color" content="#090d16">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Google Fonts: Inter, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="nav-brand-name">MAHAMMAD IRFAN SHAIK</span>
+        <span class="nav-brand-badge">
+          <span class="status-dot"></span>
+          <span>Case Study</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#skills" class="nav-link">Skills</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+        <a href="../assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary nav-resume-cta btn-resume-action" aria-label="Open Mahammad Irfan Shaik Resume in new tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 15px; height: 15px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Resume</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Case Study Content -->
+  <main class="case-study-page">
+    <div class="case-study-container">
+      
+      <!-- Back to Projects Button -->
+      <a href="../index.html#projects" class="case-study-back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>Back to Projects</span>
+      </a>
+
+      <!-- Case Study Header -->
+      <header class="case-study-header">
+        <span class="case-study-category">COMPUTER VISION • REAL-TIME AI • SURVEILLANCE PIPELINE</span>
+        <h1 class="case-study-title">Smart Security Camera System</h1>
+        
+        <div class="case-study-meta-row">
+          <span class="case-study-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span>Timeline: Jan 2026 – Mar 2026</span>
+          </span>
+          <span class="case-study-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span>Core: Computer Vision & Edge AI</span>
+          </span>
+          <span class="case-study-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            <span>Deployment: Dockerized Container</span>
+          </span>
+        </div>
+      </header>
+
+      <!-- Project Overview Panel -->
+      <section class="case-study-overview-panel">
+        <div class="overview-panel-label">Project Overview</div>
+        <p class="overview-panel-text">
+          An end-to-end intelligent edge surveillance pipeline designed for automated person localization, continuous multi-object tracking across occlusions, deep facial recognition, event persistence in SQLite, and automated Telegram intruder dispatch with live interactive Streamlit and Plotly telemetry.
+        </p>
+      </section>
+
+      <!-- Main Content Boards (Clean Centered Flow) -->
+      <div class="case-study-content">
+
+        <!-- 01. Technology Stack -->
+        <section class="case-study-board reveal" id="section-tech">
+            <div class="board-header">
+              <span class="board-num">01</span>
+              <h2 class="board-title">Technology Stack</h2>
+            </div>
+            <div class="tech-badges-grid">
+              <span class="tech-badge-pill">Python</span>
+              <span class="tech-badge-pill">YOLOv8 (Ultralytics)</span>
+              <span class="tech-badge-pill">ByteTrack</span>
+              <span class="tech-badge-pill">DeepFace</span>
+              <span class="tech-badge-pill">FaceNet</span>
+              <span class="tech-badge-pill">OpenCV</span>
+              <span class="tech-badge-pill">SQLite3</span>
+              <span class="tech-badge-pill">Telegram Bot API</span>
+              <span class="tech-badge-pill">Streamlit</span>
+              <span class="tech-badge-pill">Plotly</span>
+              <span class="tech-badge-pill">Docker</span>
+            </div>
+          </section>
+
+          <!-- 02. Problem Statement & Constraints -->
+          <section class="case-study-board reveal" id="section-problem">
+            <div class="board-header">
+              <span class="board-num">02</span>
+              <h2 class="board-title">Problem Statement & Constraints</h2>
+            </div>
+            <div class="problem-items-list">
+              <div class="problem-item">
+                <div class="problem-indicator">!</div>
+                <div class="problem-content">
+                  <strong>Unmanageable Passive Video Feeds</strong>
+                  <p>Standard security cameras record hundreds of hours of raw footage without real-time classification, leading to missed intrusions and labor-intensive manual auditing.</p>
+                </div>
+              </div>
+              <div class="problem-item">
+                <div class="problem-indicator">!</div>
+                <div class="problem-content">
+                  <strong>Occlusion & Track Fragmentation</strong>
+                  <p>Basic bounding box detectors fail when subjects pass behind obstacles or overlap, leading to frequent ID switching and inaccurate dwell-time measurements.</p>
+                </div>
+              </div>
+              <div class="problem-item">
+                <div class="problem-indicator">!</div>
+                <div class="problem-content">
+                  <strong>Lack of Instant Alert Channels</strong>
+                  <p>Surveillance setups often store logs on local disks with no remote notification pipeline to alert operators immediately upon unauthorized events.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 03. Engineering Objectives & System Goals -->
+          <section class="case-study-board reveal" id="section-objectives">
+            <div class="board-header">
+              <span class="board-num">03</span>
+              <h2 class="board-title">Engineering Objectives & System Goals</h2>
+            </div>
+            <div class="objectives-grid">
+              <div class="objective-card">
+                <div class="objective-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="objective-title">Real-Time Person Localization</div>
+                  <div class="objective-desc">Accurate bounding box detection running at interactive frame rates on input camera streams.</div>
+                </div>
+              </div>
+              <div class="objective-card">
+                <div class="objective-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="objective-title">Persistent Multi-Subject Tracking</div>
+                  <div class="objective-desc">Stable ID assignment across camera frames even during partial visual occlusion.</div>
+                </div>
+              </div>
+              <div class="objective-card">
+                <div class="objective-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="objective-title">Automated Alert Dispatch</div>
+                  <div class="objective-desc">Instant transmission of intrusion snapshot imagery and timestamps via Telegram API.</div>
+                </div>
+              </div>
+              <div class="objective-card">
+                <div class="objective-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="objective-title">Structured Event Auditing</div>
+                  <div class="objective-desc">Centralized SQLite database schema recording timestamped dwell time and detection metadata.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 04. System Architecture -->
+          <section class="case-study-board reveal" id="section-architecture">
+            <div class="board-header">
+              <span class="board-num">04</span>
+              <h2 class="board-title">System Architecture</h2>
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--text-secondary); margin-bottom: 1rem;">
+              Sequential execution flow connecting video frame ingestion to edge inference, database persistence, and remote analytics.
+            </p>
+            
+            <div class="arch-diagram-card">
+              <div class="arch-flow-row">
+                <div class="arch-node">
+                  <span class="arch-node-title">Camera Feed</span>
+                  <span class="arch-node-sub">OpenCV RTSP/USB</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">YOLOv8 Detection</span>
+                  <span class="arch-node-sub">Person Bounding Box</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">ByteTrack</span>
+                  <span class="arch-node-sub">Multi-Object ID Tracking</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">Face Recognition</span>
+                  <span class="arch-node-sub">FaceNet / DeepFace</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">SQLite Database</span>
+                  <span class="arch-node-sub">Event Logging Schema</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">Telegram Bot</span>
+                  <span class="arch-node-sub">Snapshot Push Alerts</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">Streamlit UI</span>
+                  <span class="arch-node-sub">Plotly Analytics</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 05. Core Implementation -->
+          <section class="case-study-board reveal" id="section-implementation">
+            <div class="board-header">
+              <span class="board-num">05</span>
+              <h2 class="board-title">Core Implementation</h2>
+            </div>
+            <div class="problem-items-list">
+              <div class="problem-item" style="border-left: 3px solid var(--accent);">
+                <div class="problem-content">
+                  <strong>Detection Engine</strong>
+                  <p>Ingests input video streams at native resolutions and runs YOLOv8 inference to filter person-class detections with high confidence thresholds.</p>
+                </div>
+              </div>
+              <div class="problem-item" style="border-left: 3px solid var(--accent);">
+                <div class="problem-content">
+                  <strong>Tracking Engine (ByteTrack)</strong>
+                  <p>Associates low-confidence and high-confidence bounding boxes between successive frames to retain identity track IDs during motion and partial occlusions.</p>
+                </div>
+              </div>
+              <div class="problem-item" style="border-left: 3px solid var(--accent);">
+                <div class="problem-content">
+                  <strong>Face Recognition Subsystem</strong>
+                  <p>Crops detected facial regions, computes vector embeddings via FaceNet, and checks Euclidean distance against a local database of known profiles.</p>
+                </div>
+              </div>
+              <div class="problem-item" style="border-left: 3px solid var(--accent);">
+                <div class="problem-content">
+                  <strong>Event Logic & Alert Service</strong>
+                  <p>Tracks entry time, exit time, and dwell durations; triggers Telegram API HTTP dispatches with image snapshots for unrecognized individuals.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 06. Detection & Tracking Pipeline -->
+          <section class="case-study-board reveal" id="section-pipeline">
+            <div class="board-header">
+              <span class="board-num">06</span>
+              <h2 class="board-title">Detection & Tracking Pipeline</h2>
+            </div>
+            <div class="pipeline-steps-stack">
+              <div class="pipeline-step-item">
+                <span class="step-badge">STAGE 1</span>
+                <div class="step-details">
+                  <strong>Frame Acquisition & Preprocessing</strong>
+                  <span>OpenCV grabs video frames, corrects color space, and resizes to model input tensors.</span>
+                </div>
+              </div>
+              <div class="pipeline-step-item">
+                <span class="step-badge">STAGE 2</span>
+                <div class="step-details">
+                  <strong>YOLOv8 Spatial Inference</strong>
+                  <span>Fast feature extraction predicts bounding boxes, confidence scores, and class labels.</span>
+                </div>
+              </div>
+              <div class="pipeline-step-item">
+                <span class="step-badge">STAGE 3</span>
+                <div class="step-details">
+                  <strong>ByteTrack Association</strong>
+                  <span>Kalman filter state estimation matches detections to existing tracklets without losing track during temporary frame drops.</span>
+                </div>
+              </div>
+              <div class="pipeline-step-item">
+                <span class="step-badge">STAGE 4</span>
+                <div class="step-details">
+                  <strong>Identity Verification & Logging</strong>
+                  <span>Matches FaceNet embeddings and updates entry/dwell timestamps in SQLite.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 07. Event Logging & Alerts -->
+          <section class="case-study-board reveal" id="section-logging">
+            <div class="board-header">
+              <span class="board-num">07</span>
+              <h2 class="board-title">Event Logging & Alerts</h2>
+            </div>
+            <div class="objectives-grid">
+              <div class="objective-card">
+                <div>
+                  <div class="objective-title" style="color: var(--accent);">SQLite Event Database</div>
+                  <div class="objective-desc">
+                    Stores timestamped records including <code>track_id</code>, <code>person_name</code>, <code>confidence</code>, <code>first_seen</code>, <code>last_seen</code>, and <code>snapshot_path</code> for fast historical queries.
+                  </div>
+                </div>
+              </div>
+              <div class="objective-card">
+                <div>
+                  <div class="objective-title" style="color: var(--accent);">Telegram Alert Dispatcher</div>
+                  <div class="objective-desc">
+                    Asynchronous webhook sending annotated intrusion frames directly to authorized chat channels with sub-second alert latency.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 08. Dashboard & Analytics -->
+          <section class="case-study-board reveal" id="section-dashboard">
+            <div class="board-header">
+              <span class="board-num">08</span>
+              <h2 class="board-title">Dashboard & Analytics</h2>
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+              Built an interactive monitoring console using <strong>Streamlit</strong> and <strong>Plotly</strong>. The dashboard visualizes real-time camera FPS, current active tracks, total daily intrusion events, and hourly presence distributions.
+            </p>
+            <div class="objectives-grid">
+              <div class="objective-card">
+                <div>
+                  <div class="objective-title">Live Telemetry Metrics</div>
+                  <div class="objective-desc">Active person count, frame processing rate, and alert daemon status.</div>
+                </div>
+              </div>
+              <div class="objective-card">
+                <div>
+                  <div class="objective-title">Historical Log Filtering</div>
+                  <div class="objective-desc">Query event history by date, track ID, and known vs. unknown classification.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 09. Results & Outcomes -->
+          <section class="case-study-board reveal" id="section-results">
+            <div class="board-header">
+              <span class="board-num">09</span>
+              <h2 class="board-title">Results & Outcomes</h2>
+            </div>
+            <div class="case-study-results-grid">
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">Real-Time</div>
+                <div class="metric-sub-label">Multi-Person Tracking</div>
+              </div>
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">Sub-Second</div>
+                <div class="metric-sub-label">Telegram Alert Latency</div>
+              </div>
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">SQLite</div>
+                <div class="metric-sub-label">Persistent Event Logging</div>
+              </div>
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">Docker</div>
+                <div class="metric-sub-label">Containerized Deployment</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 10. Key Engineering Decisions -->
+          <section class="case-study-board reveal" id="section-decisions">
+            <div class="board-header">
+              <span class="board-num">10</span>
+              <h2 class="board-title">Key Engineering Decisions</h2>
+            </div>
+            <div class="decisions-grid">
+              <div class="decision-card">
+                <div class="decision-q">Why YOLOv8 over older YOLO variants?</div>
+                <div class="decision-a">YOLOv8 features an anchor-free split-head architecture providing higher mAP and faster inference speed suitable for real-time edge processing.</div>
+              </div>
+              <div class="decision-card">
+                <div class="decision-q">Why ByteTrack instead of SORT?</div>
+                <div class="decision-a">ByteTrack preserves low-confidence detection boxes to recover tracks across temporary occlusions, significantly reducing ID switches.</div>
+              </div>
+              <div class="decision-card">
+                <div class="decision-q">Why SQLite for event persistence?</div>
+                <div class="decision-a">Zero-configuration, serverless, and lightweight footprint makes SQLite optimal for embedded and single-node surveillance edge boxes.</div>
+              </div>
+              <div class="decision-card">
+                <div class="decision-q">Why Telegram Bot API for alerts?</div>
+                <div class="decision-a">Zero infrastructure cost, instant push notifications across mobile and desktop, and native image attachment support.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 11. Potential Future Improvements -->
+          <section class="case-study-board reveal" id="section-future">
+            <div class="board-header">
+              <span class="board-num">11</span>
+              <h2 class="board-title">Potential Future Improvements</h2>
+            </div>
+            <div class="future-improvements-box">
+              <div style="font-weight: 700; color: var(--accent); font-size: var(--text-xs); text-transform: uppercase;">Future Engineering Scope:</div>
+              <ul>
+                <li>Multi-camera synchronization with global re-identification (ReID) across distinct camera feeds.</li>
+                <li>Edge optimization using TensorRT / ONNX Runtime for deployment on NVIDIA Jetson or Raspberry Pi hardware.</li>
+                <li>Zone-based geofencing to trigger alerts only within designated high-security coordinate boundaries.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- 12. Project Links & Actions -->
+          <div class="case-study-actions-bar reveal">
+            <div class="actions-left">
+              <a href="https://github.com/IRFAN18727/smart-security-cam" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>Explore GitHub Repository</span>
+              </a>
+              <a href="../index.html#projects" class="btn btn-secondary">
+                <span>All Projects</span>
+              </a>
+            </div>
+            <a href="../index.html#contact" class="btn btn-outline">
+              <span>Get In Touch</span>
+            </a>
+        </div>
+
+      </div>
+    </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div>
+        <div class="footer-brand-title">MAHAMMAD IRFAN SHAIK</div>
+        <div class="footer-brand-role">Machine Learning Engineer | Data Scientist</div>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/IRFAN18727" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/mahammad-irfan-shaik-579828286/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="mailto:smdirfan182@gmail.com" class="footer-link">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/case-study.js"></script>
+</body>
+</html>

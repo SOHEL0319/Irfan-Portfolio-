@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Case Study | Mahammad Irfan Shaik</title>
+  
+  <meta name="description" content="Engineering case study by Mahammad Irfan Shaik — Machine Learning Engineer & Data Scientist.">
+  <meta name="theme-color" content="#090d16">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Google Fonts: Inter, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="nav-brand-name">MAHAMMAD IRFAN SHAIK</span>
+        <span class="nav-brand-badge">
+          <span class="status-dot"></span>
+          <span>Live Case Study</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#skills" class="nav-link">Skills</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+        <a href="../assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary nav-resume-cta btn-resume-action" aria-label="Open Mahammad Irfan Shaik Resume in new tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 15px; height: 15px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Resume</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Case Study Content (Clean Centered Flow) -->
+  <main class="case-study-page">
+    <div class="case-study-container" id="caseStudyContainer">
+      
+      <!-- Back to Projects Button -->
+      <a href="../index.html#projects" class="case-study-back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 19"></polyline>
+        </svg>
+        <span>Back to Projects</span>
+      </a>
+
+      <!-- Loading State -->
+      <div id="dynamicLoading" style="text-align: center; padding: 60px 0;">
+        <div class="skeleton-shimmer" style="height: 32px; width: 40%; margin: 0 auto 20px; border-radius: 8px;"></div>
+        <div class="skeleton-shimmer" style="height: 48px; width: 70%; margin: 0 auto 30px; border-radius: 8px;"></div>
+        <div class="skeleton-shimmer" style="height: 120px; width: 100%; border-radius: 12px;"></div>
+      </div>
+
+      <!-- Dynamic Project Board Root -->
+      <div id="dynamicProjectContent" style="display: none;"></div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div>
+        <div class="footer-brand-title">MAHAMMAD IRFAN SHAIK</div>
+        <div class="footer-brand-role">Machine Learning Engineer | Data Scientist</div>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/IRFAN18727" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/mahammad-irfan-shaik-579828286/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="mailto:smdirfan182@gmail.com" class="footer-link">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/projectConfig.js"></script>
+  <script src="../js/technologyDetector.js"></script>
+  <script src="../js/repositoryParser.js"></script>
+  <script src="../js/githubService.js"></script>
+  <script src="../js/projectTransformer.js"></script>
+  <script src="../js/case-study.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(window.location.search);
+      const repoName = params.get('repo') || params.get('id') || params.get('name');
+      const container = document.getElementById('dynamicProjectContent');
+      const loader = document.getElementById('dynamicLoading');
+
+      if (!repoName) {
+        loader.innerHTML = `
+          <div class="case-study-overview-panel">
+            <h2 style="color: var(--text-primary); margin-bottom: 12px;">Project Not Specified</h2>
+            <p style="color: var(--text-secondary);">Please select a project from the portfolio list.</p>
+            <a href="../index.html#projects" class="btn btn-primary" style="margin-top: 16px;">View All Projects</a>
+          </div>
+        `;
+        return;
+      }
+
+      try {
+        const config = window.PORTFOLIO_CONFIG || {};
+        const service = new window.GitHubService(config);
+        const transformer = new window.ProjectTransformer(config);
+
+        const repos = await service.fetchRepositories();
+        const norm = (s) => (s || '').toLowerCase().replace(/[-_]/g, '');
+        const rawRepo = repos.find(r => norm(r.name) === norm(repoName));
+
+        let project;
+        if (rawRepo) {
+          project = transformer.transformSingle(rawRepo);
+        } else {
+          // Direct fetch
+          const readme = await service.fetchReadme(repoName);
+          project = transformer.transformSingle({
+            name: repoName,
+            description: '',
+            html_url: `https://github.com/${config.githubUsername}/${repoName}`,
+            readme: readme,
+            updated_at: new Date().toISOString()
+          });
+        }
+
+        document.title = `${project.title} — Case Study | Mahammad Irfan Shaik`;
+        renderProjectBoard(project, container);
+        loader.style.display = 'none';
+        container.style.display = 'block';
+
+        // Trigger reveal
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
+      } catch (err) {
+        console.error('Failed to load project details', err);
+        loader.innerHTML = `
+          <div class="case-study-overview-panel">
+            <h2 style="color: var(--text-primary); margin-bottom: 12px;">Case Study Offline</h2>
+            <p style="color: var(--text-secondary);">Could not load dynamic repository data. You can view the project directly on GitHub.</p>
+            <a href="https://github.com/${window.PORTFOLIO_CONFIG.githubUsername}/${repoName}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 16px;">View on GitHub</a>
+          </div>
+        `;
+      }
+    });
+
+    function renderProjectBoard(p, container) {
+      const esc = (window.RepositoryParser && typeof window.RepositoryParser.escapeHtml === 'function')
+        ? window.RepositoryParser.escapeHtml
+        : (s) => String(s || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+      let sectionIndex = 1;
+      const getNum = () => String(sectionIndex++).padStart(2, '0');
+
+      let sectionsHtml = '';
+
+      // 01. Tech Stack
+      if (p.technologies && p.technologies.length > 0) {
+        sectionsHtml += `
+          <section class="case-study-board reveal" id="section-tech">
+            <div class="board-header">
+              <span class="board-num">${getNum()}</span>
+              <h2 class="board-title">Technology Stack</h2>
+            </div>
+            <div class="tech-badges-grid">
+              ${p.technologies.map(t => `<span class="tech-badge-pill">${esc(t)}</span>`).join('')}
+            </div>
+          </section>
+        `;
+      }
+
+      // 02. Problem Statement
+      if (p.problem && p.problem.length > 0) {
+        sectionsHtml += `
+          <section class="case-study-board reveal" id="section-problem">
+            <div class="board-header">
+              <span class="board-num">${getNum()}</span>
+              <h2 class="board-title">Problem Statement & Constraints</h2>
+            </div>
+            <div class="problem-items-list">
+              ${p.problem.map(item => `
+                <div class="problem-item">
+                  <div class="problem-indicator">!</div>
+                  <div class="problem-content">
+                    <p>${esc(item)}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }
+
+      // 03. Objectives
+      if (p.objectives && p.objectives.length > 0) {
+        sectionsHtml += `
+          <section class="case-study-board reveal" id="section-objectives">
+            <div class="board-header">
+              <span class="board-num">${getNum()}</span>
+              <h2 class="board-title">Engineering Objectives & System Goals</h2>
+            </div>
+            <div class="objectives-grid">
+              ${p.objectives.map(item => `
+                <div class="objective-card">
+                  <div class="objective-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div>
+                    <div class="objective-desc">${esc(item)}</div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }
+
+      // 04. System Architecture
+      if (p.architecture) {
+        sectionsHtml += `
+          <section class="case-study-board reveal" id="section-architecture">
+            <div class="board-header">
+              <span class="board-num">${getNum()}</span>
+              <h2 class="board-title">System Architecture</h2>
+            </div>
+            ${p.architecture.description ? `<p style="font-size: var(--text-sm); color: var(--text-secondary); margin-bottom: 1rem;">${esc(p.architecture.description)}</p>` : ''}
+            ${p.architecture.steps && p.architecture.steps.length > 0 ? `
+              <div class="arch-diagram-card">
+                <div class="arch-flow-row">
+                  ${p.architecture.steps.map((step, idx) => `
+                    <div class="arch-node">
+                      <span class="arch-node-title">Step ${idx + 1}</span>
+                      <span class="arch-node-sub">${esc(step)}</span>
+                    </div>
+                    ${idx < p.architecture.steps.length - 1 ? '<span class="arch-arrow">➔</span>' : ''}
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </section>
+        `;
+      }
+
+      // 05. Key Features / Pipeline
+      if (p.features && p.features.length > 0) {
+        sectionsHtml += `
+          <section class="case-study-board reveal" id="section-features">
+            <div class="board-header">
+              <span class="board-num">${getNum()}</span>
+              <h2 class="board-title">Core Implementation & Key Features</h2>
+            </div>
+            <div class="problem-items-list">
+              ${p.features.map(f => `
+                <div class="problem-item" style="border-left: 3px solid var(--accent);">
+                  <div class="problem-content">
+                    <p>${esc(f)}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }
+
+      // 06. Results & Outcomes
+      if (p.results && p.results.length > 0) {
+        sectionsHtml += `
+          <section class="case-study-board reveal" id="section-results">
+            <div class="board-header">
+              <span class="board-num">${getNum()}</span>
+              <h2 class="board-title">Results & Outcomes</h2>
+            </div>
+            <div class="objectives-grid">
+              ${p.results.map(r => `
+                <div class="objective-card">
+                  <div class="objective-title" style="color: var(--accent);">Outcome Metric</div>
+                  <div class="objective-desc">${esc(r)}</div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }
+
+      // 07. Engineering Decisions
+      if (p.decisions && p.decisions.length > 0) {
+        sectionsHtml += `
+          <section class="case-study-board reveal" id="section-decisions">
+            <div class="board-header">
+              <span class="board-num">${getNum()}</span>
+              <h2 class="board-title">Key Engineering Decisions</h2>
+            </div>
+            <div class="decisions-grid">
+              ${p.decisions.map(d => `
+                <div class="decision-card">
+                  <div class="decision-a">${esc(d)}</div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      }
+
+      // 08. Future Improvements
+      if (p.futureScope && p.futureScope.length > 0) {
+        sectionsHtml += `
+          <section class="case-study-board reveal" id="section-future">
+            <div class="board-header">
+              <span class="board-num">${getNum()}</span>
+              <h2 class="board-title">Potential Future Improvements</h2>
+            </div>
+            <div class="future-improvements-box">
+              <div style="font-weight: 700; color: var(--accent); font-size: var(--text-xs); text-transform: uppercase;">Future Engineering Scope:</div>
+              <ul>
+                ${p.futureScope.map(fs => `<li>${esc(fs)}</li>`).join('')}
+              </ul>
+            </div>
+          </section>
+        `;
+      }
+
+      const formattedDate = p.updatedAt ? new Date(p.updatedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : 'Active';
+
+      container.innerHTML = `
+        <!-- Case Study Header -->
+        <header class="case-study-header">
+          <span class="case-study-category">${esc(p.category)}</span>
+          <h1 class="case-study-title">${esc(p.title)}</h1>
+          
+          <div class="case-study-meta-row">
+            <span class="case-study-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>Updated: ${esc(formattedDate)}</span>
+            </span>
+            <span class="case-study-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>GitHub Stars: ${esc(p.stars)}</span>
+            </span>
+            <span class="case-study-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>Repo: ${esc(p.name)}</span>
+            </span>
+          </div>
+        </header>
+
+        <!-- Project Overview Panel -->
+        <section class="case-study-overview-panel">
+          <div class="overview-panel-label">Project Overview</div>
+          <p class="overview-panel-text">${esc(p.overview)}</p>
+        </section>
+
+        <!-- Main Content Boards (Clean Centered Flow) -->
+        <div class="case-study-content">
+          ${sectionsHtml}
+
+          <!-- Project Actions Bar -->
+          <div class="case-study-actions-bar reveal">
+            <div class="actions-left">
+              <a href="${esc(p.githubUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>Explore GitHub Repository</span>
+              </a>
+              ${p.liveDemoUrl ? `
+                <a href="${esc(p.liveDemoUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Live Demo</span>
+                </a>
+              ` : ''}
+              <a href="../index.html#projects" class="btn btn-secondary">
+                <span>All Projects</span>
+              </a>
+            </div>
+            <a href="../index.html#contact" class="btn btn-outline">
+              <span>Get In Touch</span>
+            </a>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

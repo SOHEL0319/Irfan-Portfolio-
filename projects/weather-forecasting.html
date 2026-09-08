@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecasting on Time-Series Data — Case Study | Mahammad Irfan Shaik</title>
+  
+  <meta name="description" content="Engineering case study of Weather Forecasting on Time-Series Data by Mahammad Irfan Shaik. Bangalore rainfall prediction utilizing XGBoost (86.45%) and LSTM (86.36%) with lag feature engineering.">
+  <meta name="theme-color" content="#090d16">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Google Fonts: Inter, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="nav-brand-name">MAHAMMAD IRFAN SHAIK</span>
+        <span class="nav-brand-badge">
+          <span class="status-dot"></span>
+          <span>Case Study</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#skills" class="nav-link">Skills</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+        <a href="../assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary nav-resume-cta btn-resume-action" aria-label="Open Mahammad Irfan Shaik Resume in new tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 15px; height: 15px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Resume</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Case Study Content -->
+  <main class="case-study-page">
+    <div class="case-study-container">
+      
+      <!-- Back to Projects Button -->
+      <a href="../index.html#projects" class="case-study-back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 19"></polyline>
+        </svg>
+        <span>Back to Projects</span>
+      </a>
+
+      <!-- Case Study Header -->
+      <header class="case-study-header">
+        <span class="case-study-category">MACHINE LEARNING • TIME SERIES • PREDICTIVE MODELING</span>
+        <h1 class="case-study-title">Weather Forecasting on Time-Series Data</h1>
+        
+        <div class="case-study-meta-row">
+          <span class="case-study-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span>Timeline: Feb 2026 – May 2026</span>
+          </span>
+          <span class="case-study-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span>Core: Time-Series & Feature Engineering</span>
+          </span>
+          <span class="case-study-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            <span>Accuracy: 86.45% (XGBoost) | 86.36% (LSTM)</span>
+          </span>
+        </div>
+      </header>
+
+      <!-- Project Overview Panel -->
+      <section class="case-study-overview-panel">
+        <div class="overview-panel-label">Project Overview</div>
+        <p class="overview-panel-text">
+          A machine learning time-series system developed for Bangalore historical rainfall datasets. Employs temporal lag features, rolling statistics, and seasonal trend decomposition with comparative evaluation of XGBoost (86.45% accuracy) and Long Short-Term Memory recurrent networks (86.36% accuracy) for discrete rain-day classification.
+        </p>
+      </section>
+
+      <!-- Main Content Boards (Clean Centered Flow) -->
+      <div class="case-study-content">
+
+        <!-- 01. Technology Stack -->
+        <section class="case-study-board reveal" id="section-tech">
+            <div class="board-header">
+              <span class="board-num">01</span>
+              <h2 class="board-title">Technology Stack</h2>
+            </div>
+            <div class="tech-badges-grid">
+              <span class="tech-badge-pill">Python</span>
+              <span class="tech-badge-pill">Pandas</span>
+              <span class="tech-badge-pill">NumPy</span>
+              <span class="tech-badge-pill">Statsmodels</span>
+              <span class="tech-badge-pill">Scikit-Learn</span>
+              <span class="tech-badge-pill">XGBoost</span>
+              <span class="tech-badge-pill">LSTM / TensorFlow</span>
+              <span class="tech-badge-pill">Matplotlib</span>
+              <span class="tech-badge-pill">Seaborn</span>
+              <span class="tech-badge-pill">Jupyter Notebook</span>
+            </div>
+          </section>
+
+          <!-- 02. Problem Statement & Constraints -->
+          <section class="case-study-board reveal" id="section-problem">
+            <div class="board-header">
+              <span class="board-num">02</span>
+              <h2 class="board-title">Problem Statement & Constraints</h2>
+            </div>
+            <div class="problem-items-list">
+              <div class="problem-item">
+                <div class="problem-indicator">!</div>
+                <div class="problem-content">
+                  <strong>Non-Linear Temporal Dependencies</strong>
+                  <p>Weather data exhibits heavy auto-correlation and seasonal fluctuations that standard non-temporal regression algorithms fail to model accurately.</p>
+                </div>
+              </div>
+              <div class="problem-item">
+                <div class="problem-indicator">!</div>
+                <div class="problem-content">
+                  <strong>Monsoon Skew & Imbalanced Classes</strong>
+                  <p>Rainfall occurrence is concentrated during specific seasonal windows, requiring robust feature extraction and class weighting to prevent trivial dry-day majority predictions.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 03. Engineering Objectives & System Goals -->
+          <section class="case-study-board reveal" id="section-objectives">
+            <div class="board-header">
+              <span class="board-num">03</span>
+              <h2 class="board-title">Engineering Objectives & System Goals</h2>
+            </div>
+            <div class="objectives-grid">
+              <div class="objective-card">
+                <div>
+                  <div class="objective-title">Temporal Feature Engineering</div>
+                  <div class="objective-desc">Construct sliding-window lag features (t-1, t-3, t-7, t-30) and rolling precipitation variance.</div>
+                </div>
+              </div>
+              <div class="objective-card">
+                <div>
+                  <div class="objective-title">Seasonal Trend Decomposition</div>
+                  <div class="objective-desc">Decompose historical climate series into trend, seasonal, and residual components using Statsmodels.</div>
+                </div>
+              </div>
+              <div class="objective-card">
+                <div>
+                  <div class="objective-title">Model Benchmarking</div>
+                  <div class="objective-desc">Evaluate Gradient Boosted Decision Trees against Recurrent Neural Networks on holdout test partitions.</div>
+                </div>
+              </div>
+              <div class="objective-card">
+                <div>
+                  <div class="objective-title">Rain-Day Prediction Efficacy</div>
+                  <div class="objective-desc">Deliver verified high accuracy in classifying discrete precipitation events.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 04. System Architecture -->
+          <section class="case-study-board reveal" id="section-architecture">
+            <div class="board-header">
+              <span class="board-num">04</span>
+              <h2 class="board-title">System Architecture Flow</h2>
+            </div>
+            <div class="arch-diagram-card">
+              <div class="arch-flow-row">
+                <div class="arch-node">
+                  <span class="arch-node-title">Climate Dataset</span>
+                  <span class="arch-node-sub">Bangalore Rainfall Records</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">Data Preprocessing</span>
+                  <span class="arch-node-sub">Imputation & Scaling</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">Feature Engineering</span>
+                  <span class="arch-node-sub">Lags & Rolling Windows</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">Seasonal Analysis</span>
+                  <span class="arch-node-sub">Trend Decomposition</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">Model Training</span>
+                  <span class="arch-node-sub">XGBoost & LSTM</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">Evaluation</span>
+                  <span class="arch-node-sub">Rain-Day Accuracy</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 05. Feature Engineering -->
+          <section class="case-study-board reveal" id="section-features">
+            <div class="board-header">
+              <span class="board-num">05</span>
+              <h2 class="board-title">Feature Engineering Deep Dive</h2>
+            </div>
+            <div class="pipeline-steps-stack">
+              <div class="pipeline-step-item">
+                <span class="step-badge">LAG TERMS</span>
+                <div class="step-details">
+                  <strong>Multi-Order Historical Lags</strong>
+                  <span>Generated t-1, t-2, t-3, t-7, and t-30 day lag terms to capture short-term memory and weekly periodicity.</span>
+                </div>
+              </div>
+              <div class="pipeline-step-item">
+                <span class="step-badge">ROLLING STATS</span>
+                <div class="step-details">
+                  <strong>Moving Windows</strong>
+                  <span>Calculated 7-day and 30-day rolling means and standard deviations to represent atmospheric volatility.</span>
+                </div>
+              </div>
+              <div class="pipeline-step-item">
+                <span class="step-badge">CALENDAR</span>
+                <div class="step-details">
+                  <strong>Cyclical Encoding</strong>
+                  <span>Sine and cosine transformations on day-of-year to model annual seasonality smoothly across year boundaries.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 06. Model Comparison -->
+          <section class="case-study-board reveal" id="section-models">
+            <div class="board-header">
+              <span class="board-num">06</span>
+              <h2 class="board-title">Model Comparative Analysis</h2>
+            </div>
+            <div class="decisions-grid">
+              <div class="decision-card" style="border-left: 3px solid var(--accent);">
+                <div class="decision-q">XGBoost Gradient Boosting</div>
+                <div class="decision-a">
+                  Tree-based gradient boosting efficiently captured tabular interactions between engineered lag features, achieving <strong>86.45% accuracy</strong> with fast training times.
+                </div>
+              </div>
+              <div class="decision-card" style="border-left: 3px solid var(--accent);">
+                <div class="decision-q">LSTM Recurrent Neural Network</div>
+                <div class="decision-a">
+                  Sequential LSTM memory cells processed historical sequence tensors directly, achieving <strong>86.36% accuracy</strong> and learning long-range temporal dependencies.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 07. Verified Results -->
+          <section class="case-study-board reveal" id="section-results">
+            <div class="board-header">
+              <span class="board-num">07</span>
+              <h2 class="board-title">Verified Results & Outcomes</h2>
+            </div>
+            <div class="case-study-results-grid">
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">86.45%</div>
+                <div class="metric-sub-label">XGBoost Rain-Day Accuracy</div>
+              </div>
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">86.36%</div>
+                <div class="metric-sub-label">LSTM Rain-Day Accuracy</div>
+              </div>
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">Bangalore</div>
+                <div class="metric-sub-label">Meteorological Dataset</div>
+              </div>
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">Holdout</div>
+                <div class="metric-sub-label">Out-of-Sample Validation</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 08. Engineering Decisions -->
+          <section class="case-study-board reveal" id="section-decisions">
+            <div class="board-header">
+              <span class="board-num">08</span>
+              <h2 class="board-title">Key Engineering Decisions</h2>
+            </div>
+            <div class="decisions-grid">
+              <div class="decision-card">
+                <div class="decision-q">Why frame the problem as discrete rain-day classification?</div>
+                <div class="decision-a">Discrete rain vs. no-rain classification provides direct actionable utility for municipal scheduling while avoiding noisy millimeter-level sensor variance.</div>
+              </div>
+              <div class="decision-card">
+                <div class="decision-q">Why compare XGBoost with LSTM?</div>
+                <div class="decision-a">Validates whether recurrent deep learning outperforms feature-engineered gradient boosted trees on tabular meteorological series.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 09. Future Scope -->
+          <section class="case-study-board reveal" id="section-future">
+            <div class="board-header">
+              <span class="board-num">09</span>
+              <h2 class="board-title">Potential Future Improvements</h2>
+            </div>
+            <div class="future-improvements-box">
+              <div style="font-weight: 700; color: var(--accent); font-size: var(--text-xs); text-transform: uppercase;">Future Engineering Scope:</div>
+              <ul>
+                <li>Integrate spatial satellite radar raster data alongside local weather station readings.</li>
+                <li>Implement multi-step ahead continuous precipitation regression (t+1 through t+7 days).</li>
+                <li>Deploy as a real-time REST API microservice with automated weather telemetry ingestion.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Project Actions Bar -->
+          <div class="case-study-actions-bar reveal">
+            <div class="actions-left">
+              <a href="https://github.com/IRFAN18727/Weather-Forecasting-Bangalore" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>Explore GitHub Repository</span>
+              </a>
+              <a href="../index.html#projects" class="btn btn-secondary">
+                <span>All Projects</span>
+              </a>
+            </div>
+            <a href="../index.html#contact" class="btn btn-outline">
+              <span>Get In Touch</span>
+            </a>
+        </div>
+
+      </div>
+    </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div>
+        <div class="footer-brand-title">MAHAMMAD IRFAN SHAIK</div>
+        <div class="footer-brand-role">Machine Learning Engineer | Data Scientist</div>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/IRFAN18727" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/mahammad-irfan-shaik-579828286/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="mailto:smdirfan182@gmail.com" class="footer-link">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/case-study.js"></script>
+</body>
+</html>

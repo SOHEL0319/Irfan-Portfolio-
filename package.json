@@ -1,0 +1,26 @@
+{
+  "name": "mahammad-irfan-shaik-portfolio",
+  "version": "1.0.0",
+  "description": "Production Portfolio of Mahammad Irfan Shaik — Machine Learning Engineer & Data Scientist",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve . -l 5000",
+    "start": "serve . -l 5000",
+    "build": "node scripts/sync-github.js",
+    "sync": "node scripts/sync-github.js",
+    "test": "node scripts/test-audit.js"
+  },
+  "keywords": [
+    "machine-learning",
+    "data-science",
+    "computer-vision",
+    "nlp",
+    "power-bi",
+    "portfolio"
+  ],
+  "author": "Mahammad Irfan Shaik <smdirfan182@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

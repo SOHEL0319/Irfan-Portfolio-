@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Performance Analytics Dashboard — Case Study | Mahammad Irfan Shaik</title>
+  
+  <meta name="description" content="Engineering case study of School Performance Analytics Dashboard by Mahammad Irfan Shaik. End-to-end Power BI & DAX platform analyzing academic performance, attendance, and branch metrics.">
+  <meta name="theme-color" content="#090d16">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+  <!-- Google Fonts: Inter, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar" id="readingProgressBar"></div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <span class="nav-brand-name">MAHAMMAD IRFAN SHAIK</span>
+        <span class="nav-brand-badge">
+          <span class="status-dot"></span>
+          <span>Case Study</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#skills" class="nav-link">Skills</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+        <a href="../assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary nav-resume-cta btn-resume-action" aria-label="Open Mahammad Irfan Shaik Resume in new tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 15px; height: 15px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Resume</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Case Study Content -->
+  <main class="case-study-page">
+    <div class="case-study-container">
+      
+      <!-- Back to Projects Button -->
+      <a href="../index.html#projects" class="case-study-back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 19"></polyline>
+        </svg>
+        <span>Back to Projects</span>
+      </a>
+
+      <!-- Case Study Header -->
+      <header class="case-study-header">
+        <span class="case-study-category">BUSINESS INTELLIGENCE • DAX • DATA MODELING</span>
+        <h1 class="case-study-title">School Performance Analytics Dashboard</h1>
+        
+        <div class="case-study-meta-row">
+          <span class="case-study-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span>Platform: Power BI Desktop</span>
+          </span>
+          <span class="case-study-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span>Discipline: Data Modeling & DAX</span>
+          </span>
+          <span class="case-study-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            <span>Scope: Multi-Branch Academic Reporting</span>
+          </span>
+        </div>
+      </header>
+
+      <!-- Project Overview Panel -->
+      <section class="case-study-overview-panel">
+        <div class="overview-panel-label">Project Overview</div>
+        <p class="overview-panel-text">
+          An end-to-end school performance analytics platform built using Power BI, DAX, data modeling, and business intelligence techniques to evaluate student grades, attendance metrics, branch-level comparisons, and class performance distributions.
+        </p>
+      </section>
+
+      <!-- Main Content Boards (Clean Centered Flow) -->
+      <div class="case-study-content">
+
+          <!-- 01. Technology Stack -->
+          <section class="case-study-board reveal" id="section-tech">
+            <div class="board-header">
+              <span class="board-num">01</span>
+              <h2 class="board-title">Technology Stack</h2>
+            </div>
+            <div class="tech-badges-grid">
+              <span class="tech-badge-pill">Power BI</span>
+              <span class="tech-badge-pill">DAX</span>
+              <span class="tech-badge-pill">Power Query (M)</span>
+              <span class="tech-badge-pill">Data Modeling (Star Schema)</span>
+              <span class="tech-badge-pill">ETL & Data Cleaning</span>
+            </div>
+          </section>
+
+          <!-- 02. Problem Statement & Constraints -->
+          <section class="case-study-board reveal" id="section-problem">
+            <div class="board-header">
+              <span class="board-num">02</span>
+              <h2 class="board-title">Problem Statement & Constraints</h2>
+            </div>
+            <div class="problem-items-list">
+              <div class="problem-item">
+                <div class="problem-indicator">!</div>
+                <div class="problem-content">
+                  <strong>Fragmented Spreadsheets & Manual Reporting</strong>
+                  <p>School administrators track student attendance and examination marks across disconnected files, making it hard to identify at-risk students or evaluate branch-wise teacher performance.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 03. Engineering Objectives -->
+          <section class="case-study-board reveal" id="section-objectives">
+            <div class="board-header">
+              <span class="board-num">03</span>
+              <h2 class="board-title">Engineering Objectives</h2>
+            </div>
+            <div class="objectives-grid">
+              <div class="objective-card">
+                <div>
+                  <div class="objective-title">Centralized Data Model</div>
+                  <div class="objective-desc">Integrate students, branches, subjects, and test records into a unified relational schema.</div>
+                </div>
+              </div>
+              <div class="objective-card">
+                <div>
+                  <div class="objective-title">Dynamic KPI Measures</div>
+                  <div class="objective-desc">Build DAX expressions for GPA calculation, attendance rates, and grade distribution percentiles.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 04. Data Pipeline Flow -->
+          <section class="case-study-board reveal" id="section-architecture">
+            <div class="board-header">
+              <span class="board-num">04</span>
+              <h2 class="board-title">Data Modeling Pipeline Flow</h2>
+            </div>
+            <div class="arch-diagram-card">
+              <div class="arch-flow-row">
+                <div class="arch-node">
+                  <span class="arch-node-title">Academic CSVs</span>
+                  <span class="arch-node-sub">Marks & Attendance</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">Power Query ETL</span>
+                  <span class="arch-node-sub">Type Transformation</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">Star Schema</span>
+                  <span class="arch-node-sub">Dimension & Fact Tables</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">DAX Engine</span>
+                  <span class="arch-node-sub">KPI Metrics</span>
+                </div>
+                <span class="arch-arrow">➔</span>
+                <div class="arch-node">
+                  <span class="arch-node-title">Interactive UI</span>
+                  <span class="arch-node-sub">Drill-Down Slicers</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 05. Dashboard Scope -->
+          <section class="case-study-board reveal" id="section-features">
+            <div class="board-header">
+              <span class="board-num">05</span>
+              <h2 class="board-title">Core Reporting Views</h2>
+            </div>
+            <div class="problem-items-list">
+              <div class="problem-item" style="border-left: 3px solid var(--accent);">
+                <div class="problem-content">
+                  <strong>Student Performance View</strong>
+                  <p>Individual student scorecards, examination history, subject strengths, and GPA progression charts.</p>
+                </div>
+              </div>
+              <div class="problem-item" style="border-left: 3px solid var(--accent);">
+                <div class="problem-content">
+                  <strong>Attendance & Branch Comparison</strong>
+                  <p>Class-level attendance heatmaps, absentee trend analysis, and comparative branch metrics.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 06. Verified Outcomes -->
+          <section class="case-study-board reveal" id="section-results">
+            <div class="board-header">
+              <span class="board-num">06</span>
+              <h2 class="board-title">Verified Outcomes</h2>
+            </div>
+            <div class="case-study-results-grid">
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">Power BI</div>
+                <div class="metric-sub-label">Interactive Platform</div>
+              </div>
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">DAX</div>
+                <div class="metric-sub-label">Custom Measures</div>
+              </div>
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">Star Schema</div>
+                <div class="metric-sub-label">Relational Model</div>
+              </div>
+              <div class="case-study-metric-card">
+                <div class="metric-big-val">Open Source</div>
+                <div class="metric-sub-label">Public Repository</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 07. Engineering Decisions -->
+          <section class="case-study-board reveal" id="section-decisions">
+            <div class="board-header">
+              <span class="board-num">07</span>
+              <h2 class="board-title">Key Engineering Decisions</h2>
+            </div>
+            <div class="decisions-grid">
+              <div class="decision-card">
+                <div class="decision-q">Why use dimension tables for branches and classes?</div>
+                <div class="decision-a">Normalized dimension tables enable cross-filtering across academic years without altering historical examination fact records.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 08. Future Scope -->
+          <section class="case-study-board reveal" id="section-future">
+            <div class="board-header">
+              <span class="board-num">08</span>
+              <h2 class="board-title">Potential Future Scope</h2>
+            </div>
+            <div class="future-improvements-box">
+              <div style="font-weight: 700; color: var(--accent); font-size: var(--text-xs); text-transform: uppercase;">Future Engineering Scope:</div>
+              <ul>
+                <li>Implement machine learning anomaly detection to flag students at risk of academic drop early in the semester.</li>
+                <li>Set up automated email alerts to parents when student attendance dips below specified thresholds.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Project Actions Bar -->
+          <div class="case-study-actions-bar reveal">
+            <div class="actions-left">
+              <a href="https://github.com/IRFAN18727/School-Performance-Analytics-Dashboard" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>Explore GitHub Repository</span>
+              </a>
+              <a href="../index.html#projects" class="btn btn-secondary">
+                <span>All Projects</span>
+              </a>
+            </div>
+            <a href="../index.html#contact" class="btn btn-outline">
+              <span>Get In Touch</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div>
+        <div class="footer-brand-title">MAHAMMAD IRFAN SHAIK</div>
+        <div class="footer-brand-role">Machine Learning Engineer | Data Scientist</div>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/IRFAN18727" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/mahammad-irfan-shaik-579828286/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="mailto:smdirfan182@gmail.com" class="footer-link">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/case-study.js"></script>
+</body>
+</html>

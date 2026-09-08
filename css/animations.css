@@ -1,0 +1,552 @@
+/* ==========================================================================
+   PREMIUM ANIMATION SYSTEM
+   Mahammad Irfan Shaik — ML Engineer & Data Scientist Portfolio
+   ========================================================================== */
+
+/* --- 1. Initial Page Load Keyframes --- */
+@keyframes navSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroScaleUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes textRotatorFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textRotatorFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes ambientDriftSlow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+    opacity: 0.65;
+  }
+}
+
+@keyframes ambientDriftAlt {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(6px) rotate(-1deg);
+    opacity: 0.55;
+  }
+}
+
+@keyframes pulseStatus {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 6px var(--success);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 2px var(--success);
+    transform: scale(0.92);
+  }
+}
+
+@keyframes matrixSoftFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* --- 2. Initial Page Load Animation Classes --- */
+.site-header {
+  animation: navSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-load-eyebrow {
+  opacity: 0;
+  animation: heroFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+.hero-load-title {
+  opacity: 0;
+  animation: heroScaleUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.hero-load-headline {
+  opacity: 0;
+  animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s forwards;
+}
+
+.hero-load-desc {
+  opacity: 0;
+  animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.44s forwards;
+}
+
+.hero-load-flow {
+  opacity: 0;
+  animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.54s forwards;
+}
+
+.hero-load-cta {
+  opacity: 0;
+  animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.64s forwards;
+}
+
+.hero-load-socials {
+  opacity: 0;
+  animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.74s forwards;
+}
+
+.hero-load-visual {
+  opacity: 0;
+  animation: heroFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+}
+
+/* --- 3. Scroll Reveal System --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px) scale(0.985);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered Delay Utilities */
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-250 { transition-delay: 250ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-350 { transition-delay: 350ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* --- 4. Contained Floating Badge & Micro-Animation System --- */
+@keyframes techPillFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes badgeFloatA {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes badgeFloatB {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes badgeFloatC {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2.5px);
+  }
+}
+
+@keyframes skillChipFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes ambientGlowPulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.04);
+  }
+}
+
+/* Responsive Floating Reductions */
+@media (max-width: 768px) {
+  @keyframes techPillFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+  }
+  @keyframes badgeFloatA {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+  }
+  @keyframes badgeFloatB {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2.5px); }
+  }
+  @keyframes badgeFloatC {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-1.5px); }
+  }
+  @keyframes skillChipFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-1.5px); }
+  }
+}
+
+@media (max-width: 480px) {
+  @keyframes techPillFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-1.5px); }
+  }
+  @keyframes badgeFloatA {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-1.5px); }
+  }
+  @keyframes badgeFloatB {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+  }
+  @keyframes badgeFloatC {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-1px); }
+  }
+  @keyframes skillChipFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-1px); }
+  }
+}
+
+/* --- 5. Dynamic Text Rotator --- */
+.text-rotator-wrapper {
+  display: inline-block;
+  min-height: 1.3em;
+  position: relative;
+  vertical-align: bottom;
+}
+
+.rotator-item {
+  display: inline-block;
+  color: var(--accent);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rotator-item.fade-in {
+  animation: textRotatorFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.rotator-item.fade-out {
+  animation: textRotatorFadeOut 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- 6. Micro-Interactions & Hover Dynamics --- */
+
+/* Project Card Hover Lifts */
+.project-card,
+.secondary-card,
+.skill-category-card,
+.cert-card,
+.about-facts-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6), 0 0 20px -8px rgba(56, 189, 248, 0.15);
+}
+
+.project-card:hover .project-title {
+  color: #ffffff;
+}
+
+.project-card:hover .workflow-node {
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.secondary-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+/* Skill Chip Hover */
+.skill-chip {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.18s ease,
+              border-color 0.18s ease,
+              color 0.18s ease;
+  will-change: transform;
+}
+
+.skill-chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: var(--bg-surface-elevated);
+}
+
+/* Certification Card Icon Scale on Hover */
+.cert-card {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-light);
+}
+
+.cert-card:hover .cert-icon {
+  transform: scale(1.06);
+  border-color: var(--accent);
+  color: #7dd3fc;
+}
+
+.cert-icon {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease, color 0.22s ease;
+}
+
+/* Button Micro-Interactions */
+.btn {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.18s ease,
+              border-color 0.18s ease,
+              color 0.18s ease,
+              box-shadow 0.18s ease;
+  will-change: transform;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn svg {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:hover svg {
+  transform: translateX(3px);
+}
+
+.btn-secondary:hover svg,
+.social-link:hover svg {
+  transform: scale(1.08);
+}
+
+.contact-channel-item {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              background-color 0.2s ease;
+}
+
+.contact-channel-item:hover {
+  transform: translateX(4px);
+  border-color: var(--border-accent);
+}
+
+.contact-channel-item:hover .channel-icon {
+  transform: scale(1.05);
+}
+
+.channel-icon {
+  transition: transform 0.2s ease;
+}
+
+/* Status Indicator Pulse */
+.status-dot {
+  animation: pulseStatus 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* --- 7. Timeline Progressive Animation --- */
+.timeline-card {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.timeline-card:hover {
+  transform: translateX(4px);
+  border-color: var(--border-light);
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.2);
+  border-color: #7dd3fc;
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.timeline-dot {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* --- 8. Back to Top Floating Button --- */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 42px;
+  height: 42px;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 900;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-md);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background-color: var(--bg-surface-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.2);
+}
+
+.back-to-top svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.back-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+/* --- 9. Modal Dialog Animation --- */
+.modal-backdrop {
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-dialog {
+  transform: scale(0.97) translateY(16px);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.open .modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+/* --- 10. Accessibility: Reduced Motion Support --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .site-header,
+  .hero-load-eyebrow,
+  .hero-load-title,
+  .hero-load-headline,
+  .hero-load-desc,
+  .hero-load-flow,
+  .hero-load-cta,
+  .hero-load-socials,
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .ambient-tag,
+  .floating-tech-pill,
+  .tech-tag,
+  .skill-chip,
+  .status-dot {
+    animation: none !important;
+  }
+
+  .btn:hover,
+  .project-card:hover,
+  .secondary-card:hover,
+  .floating-tech-pill:hover,
+  .tech-tag:hover,
+  .skill-chip:hover,
+  .cert-card:hover,
+  .timeline-card:hover,
+  .contact-channel-item:hover,
+  .back-to-top:hover {
+    transform: none !important;
+  }
+}
