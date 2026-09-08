@@ -63,7 +63,8 @@ const requiredFiles = [
   'js/main.js',
   'js/case-study.js',
   'api/github-webhook.js',
-  'scripts/sync-github.js'
+  'scripts/sync-github.js',
+  'vite.config.js'
 ];
 
 requiredFiles.forEach(file => {

@@ -5,8 +5,8 @@
   "main": "index.html",
   "scripts": {
     "dev": "serve . -l 5000",
-    "start": "serve . -l 5000",
-    "build": "node scripts/sync-github.js",
+    "start": "serve dist -l 5000",
+    "build": "node scripts/sync-github.js && vite build",
     "sync": "node scripts/sync-github.js",
     "test": "node scripts/test-audit.js"
   },
@@ -21,6 +21,7 @@
   "author": "Mahammad Irfan Shaik <smdirfan182@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "serve": "^14.2.4"
+    "serve": "^14.2.4",
+    "vite": "^8.2.2"
   }
 }
